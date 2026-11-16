@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台灣小吃圖鑑</title>
+  <meta name="description" content="用圖鑑的方式認識台灣小吃：起源、口感、吃法與小知識。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="lights" aria-hidden="true"></div>
+
+  <header class="wrap site-nav">
+    <a class="brand" href="index.html">台灣小吃<span>圖鑑</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">圖鑑</a></li>
+        <li><a href="about.html">關於</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <div class="masthead">
+      <h1 class="sign">台灣小吃圖鑑</h1>
+      <p>走進夜市，一攤一攤收集起來。每道小吃都是一張圖鑑卡：從哪裡來、吃起來怎樣、內行人怎麼吃。</p>
+    </div>
+
+    <div class="toolbar">
+      <input id="search" class="search" type="search" placeholder="搜尋小吃、地區或標籤…" aria-label="搜尋小吃">
+      <div id="chips" class="chips" role="group" aria-label="分類篩選"></div>
+    </div>
+    <p id="count" class="count" aria-live="polite"></p>
+
+    <div id="grid" class="grid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">台灣小吃圖鑑 · 以 CLAUDE.md 規則持續擴充的靜態網站 · <a href="about.html">關於本站</a></div>
+  </footer>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

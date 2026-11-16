@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>關於本站｜台灣小吃圖鑑</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="lights" aria-hidden="true"></div>
+
+  <header class="wrap site-nav">
+    <a class="brand" href="index.html">台灣小吃<span>圖鑑</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">圖鑑</a></li>
+        <li><a href="about.html">關於</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap prose">
+    <h1>關於本站</h1>
+    <p>「台灣小吃圖鑑」是一個練習用的小專案：重點不是把一個網頁做完，而是建立一套規則（<code>CLAUDE.md</code>），讓 AI 讀完之後，就能用同樣的格式持續新增小吃。</p>
+
+    <h2>每張圖鑑卡都有什麼？</h2>
+    <table>
+      <thead><tr><th>區塊</th><th>內容</th></tr></thead>
+      <tbody>
+        <tr><td>頁首</td><td>emoji、中英文名稱、一句話介紹</td></tr>
+        <tr><td>基本資料</td><td>分類、常見地區、參考價格、適合時段</td></tr>
+        <tr><td>起源故事</td><td>歷史與傳說（傳說會標明「相傳」）</td></tr>
+        <tr><td>特色與口感</td><td>3～5 個重點</td></tr>
+        <tr><td>推薦吃法</td><td>3～4 個步驟或建議</td></tr>
+        <tr><td>小知識</td><td>一則「你知道嗎？」</td></tr>
+        <tr><td>相關小吃</td><td>連到其他圖鑑卡</td></tr>
+      </tbody>
+    </table>
+
+    <h2>怎麼新增一道小吃？</h2>
+    <p>對 AI 說「請依照 CLAUDE.md 新增『豆花』」即可。AI 會：</p>
+    <ol>
+      <li>決定英文 slug（例如 <code>douhua</code>）</li>
+      <li>複製 <code>templates/snack-template.html</code> 到 <code>snacks/</code></li>
+      <li>依固定格式填寫內容</li>
+      <li>在 <code>data/snacks.json</code> 加一筆資料，首頁就會自動出現新卡片</li>
+      <li>補上相關小吃連結</li>
+      <li>執行 <code>python3 scripts/check.py</code> 確認全部符合規則</li>
+    </ol>
+
+    <h2>內容說明</h2>
+    <p>價格為參考範圍，會因地區與店家而不同；起源有不同說法時，本站會並列各種說法。所有圖片皆以 emoji 呈現，不使用外部圖片。</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">台灣小吃圖鑑 · 以 CLAUDE.md 規則持續擴充的靜態網站 · <a href="about.html">關於本站</a></div>
+  </footer>
+</body>
+</html>
