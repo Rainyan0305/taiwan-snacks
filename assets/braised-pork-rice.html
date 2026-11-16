@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 格式：中文名｜台灣小吃圖鑑 -->
+  <title>滷肉飯｜台灣小吃圖鑑</title>
+  <meta name="description" content="肥瘦相間的滷肉燥淋在白飯上，台灣人的日常靈魂食物。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<!-- data-category 必須與 data/snacks.json 的 category 相同：rice / noodle / fried / soup / sweet / drink -->
+<body data-category="rice">
+  <div class="lights" aria-hidden="true"></div>
+
+  <header class="wrap site-nav">
+    <a class="brand" href="../index.html">台灣小吃<span>圖鑑</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">圖鑑</a></li>
+        <li><a href="../about.html">關於</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap snack-page">
+    <p class="crumb"><a href="../index.html">← 回圖鑑</a></p>
+
+    <article class="sheet">
+      <!-- 1. 頁首：emoji、中文名、英文名、一句話介紹（30 字以內） -->
+      <header id="hero">
+        <div class="hero-emoji" aria-hidden="true">🍚</div>
+        <h1>滷肉飯</h1>
+        <p class="en">Braised Pork Rice</p>
+        <p class="tagline">肥瘦相間的滷肉燥淋在白飯上，台灣人的日常靈魂食物。</p>
+      </header>
+
+      <!-- 2. 基本資料：固定四格 -->
+      <section id="info">
+        <h2>基本資料</h2>
+        <dl>
+          <div><dt>分類</dt><dd>飯食</dd></div>
+          <div><dt>常見地區</dt><dd>全台，北部尤其普遍</dd></div>
+          <div><dt>參考價格</dt><dd>約 NT$ 30–60</dd></div>
+          <div><dt>適合時段</dt><dd>早餐、午餐到宵夜都有</dd></div>
+        </dl>
+      </section>
+
+      <!-- 3. 起源故事：2～3 段，傳說要標明「相傳」 -->
+      <section id="origin">
+        <h2>起源故事</h2>
+        <p>滷肉飯是把豬肉（常用帶皮的豬五花）切成小丁或絞碎，加上醬油、紅蔥頭、冰糖等慢火滷煮，再連同滷汁一起淋在白飯上。一般認為，過去豬肉珍貴，把碎肉滷成肉燥配飯，是用一點點肉就能讓全家吃飽的聰明做法。</p>
+        <p>要注意南北叫法不同：北部的「滷肉飯」，在南部多半叫「肉燥飯」；而在南部說「滷肉飯」，有時指的是整塊焢肉蓋在飯上的「焢肉飯」。點餐前看清楚菜單最保險。</p>
+      </section>
+
+      <!-- 4. 特色與口感：3～5 條，每條以粗體關鍵字開頭 -->
+      <section id="taste">
+        <h2>特色與口感</h2>
+        <ul>
+          <li><strong>油蔥香</strong>：紅蔥頭爆香後一起滷，是滷肉飯香氣的關鍵。</li>
+          <li><strong>肥瘦比例</strong>：帶皮五花的膠質讓滷汁濃稠，拌飯時會微微黏口。</li>
+          <li><strong>甜鹹醬色</strong>：醬油的鹹與冰糖的甜，讓肉燥呈現漂亮的琥珀色。</li>
+          <li><strong>黃蘿蔔</strong>：很多店會附上一兩片醃黃蘿蔔，清脆解膩。</li>
+        </ul>
+      </section>
+
+      <!-- 5. 推薦吃法：3～4 個步驟或建議 -->
+      <section id="howto">
+        <h2>推薦吃法</h2>
+        <ol>
+          <li>上桌後先把肉燥和白飯拌勻，讓每粒米都沾到滷汁。</li>
+          <li>加點一顆滷蛋或一份燙青菜，就是經典組合。</li>
+          <li>再配一碗清湯（例如貢丸湯、虱目魚湯），一鹹一清剛剛好。</li>
+        </ol>
+      </section>
+
+      <!-- 6. 小知識：一則 -->
+      <section id="trivia">
+        <h2>小知識</h2>
+        <p class="tip"><strong>你知道嗎？</strong>不少老店的滷汁是每天加入新料、持續滷下去的「老滷」，味道會隨時間越來越有層次。</p>
+      </section>
+
+      <!-- 7. 相關小吃：1～3 個，連到 snacks/ 裡已存在的頁面 -->
+      <section id="related">
+        <h2>相關小吃</h2>
+        <ul>
+          <li><a href="oyster-omelet.html">🦪 蚵仔煎</a></li>
+          <li><a href="stinky-tofu.html">🧆 臭豆腐</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">台灣小吃圖鑑 · 以 CLAUDE.md 規則持續擴充的靜態網站 · <a href="../about.html">關於本站</a></div>
+  </footer>
+</body>
+</html>

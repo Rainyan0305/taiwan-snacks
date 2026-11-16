@@ -1,0 +1,46 @@
+[
+  {
+    "slug": "bubble-tea",
+    "name": "珍珠奶茶",
+    "nameEn": "Bubble Tea",
+    "emoji": "🧋",
+    "category": "drink",
+    "region": "全台，發源地有台中、台南兩種說法",
+    "price": "約 NT$ 50–80",
+    "summary": "奶茶加上 Q 彈粉圓，從台灣紅到全世界的手搖飲代表。",
+    "tags": ["手搖飲", "下午茶"]
+  },
+  {
+    "slug": "braised-pork-rice",
+    "name": "滷肉飯",
+    "nameEn": "Braised Pork Rice",
+    "emoji": "🍚",
+    "category": "rice",
+    "region": "全台，北部尤其普遍",
+    "price": "約 NT$ 30–60",
+    "summary": "肥瘦相間的滷肉燥淋在白飯上，台灣人的日常靈魂食物。",
+    "tags": ["日常", "豬肉"]
+  },
+  {
+    "slug": "oyster-omelet",
+    "name": "蚵仔煎",
+    "nameEn": "Oyster Omelet",
+    "emoji": "🦪",
+    "category": "fried",
+    "region": "全台夜市，沿海產蚵地區尤其常見",
+    "price": "約 NT$ 70–100",
+    "summary": "鮮蚵、雞蛋和地瓜粉漿煎成的夜市代表，淋上甜辣醬汁。",
+    "tags": ["夜市", "海鮮"]
+  },
+  {
+    "slug": "stinky-tofu",
+    "name": "臭豆腐",
+    "nameEn": "Stinky Tofu",
+    "emoji": "🧆",
+    "category": "fried",
+    "region": "全台；新北深坑以豆腐料理聞名",
+    "price": "約 NT$ 50–100",
+    "summary": "聞起來臭、吃起來香，外酥內嫩，配上酸甜的台式泡菜。",
+    "tags": ["夜市", "發酵"]
+  }
+]

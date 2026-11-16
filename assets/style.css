@@ -1,0 +1,383 @@
+/* =========================================================
+   台灣小吃圖鑑 — 全站唯一樣式表
+   風格：「夜市燈籠」。規則見 CLAUDE.md 第 4 節。
+   ========================================================= */
+
+/* ---------- 色彩與字型 ---------- */
+:root {
+  --night: #141b2d;
+  --night-2: #1d2740;
+  --paper: #fbf5e9;
+  --paper-2: #f2e8d4;
+  --ink: #2b2420;
+  --ink-soft: #6b5d52;
+  --lantern: #d8412f;
+  --glow: #f6c445;
+  --cat: var(--lantern); /* 由分類主題色覆寫 */
+
+  --serif: "Noto Serif TC", "Songti TC", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+
+  --radius: 18px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- 分類主題色（新增分類時在此加一行） ---------- */
+[data-category="rice"]   { --cat: #b8562f; }
+[data-category="noodle"] { --cat: #c98a1c; }
+[data-category="fried"]  { --cat: #e0672a; }
+[data-category="soup"]   { --cat: #2f8a73; }
+[data-category="sweet"]  { --cat: #c94f86; }
+[data-category="drink"]  { --cat: #7356c2; }
+
+/* ---------- 基本 ---------- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  line-height: 1.75;
+  color: var(--paper);
+  background:
+    radial-gradient(1200px 500px at 50% -200px, rgba(246, 196, 69, 0.18), transparent 70%),
+    var(--night);
+  min-height: 100vh;
+}
+
+a { color: var(--glow); }
+a:hover { color: #fff; }
+
+.wrap {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+/* ---------- 頂端燈串 ---------- */
+.lights {
+  height: 26px;
+  background:
+    radial-gradient(circle at 12px 14px, var(--glow) 0 5px, transparent 6px) 0 0 / 48px 26px repeat-x,
+    radial-gradient(circle at 36px 14px, var(--lantern) 0 5px, transparent 6px) 0 0 / 48px 26px repeat-x;
+  filter: drop-shadow(0 0 6px rgba(246, 196, 69, 0.7));
+  border-top: 2px solid #3a3a3a;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+@keyframes twinkle { from { opacity: 0.75; } to { opacity: 1; } }
+
+/* ---------- 導覽列 ---------- */
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+.brand {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 1.35rem;
+  color: var(--paper);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+.brand span { color: var(--glow); }
+.site-nav ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-nav ul a {
+  color: var(--paper);
+  text-decoration: none;
+  opacity: 0.8;
+}
+.site-nav ul a:hover { opacity: 1; color: var(--glow); }
+
+/* ---------- 首頁主視覺 ---------- */
+.masthead {
+  text-align: center;
+  padding: 3.5rem 0 2.5rem;
+}
+.masthead .sign {
+  display: inline-block;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  line-height: 1.2;
+  margin: 0;
+  padding: 0.3em 0.8em;
+  color: #fff;
+  background: var(--lantern);
+  border-radius: 12px;
+  box-shadow: 0 0 0 6px var(--night), 0 0 0 9px var(--glow), 0 0 40px rgba(216, 65, 47, 0.6);
+  transform: rotate(-1.5deg);
+}
+.masthead p {
+  margin: 1.6rem auto 0;
+  max-width: 34em;
+  color: #d9d2c4;
+}
+
+/* ---------- 搜尋與篩選 ---------- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.search {
+  flex: 1 1 260px;
+  max-width: 360px;
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  border: 2px solid var(--night-2);
+  background: var(--night-2);
+  color: var(--paper);
+  font: inherit;
+}
+.search:focus { outline: none; border-color: var(--glow); }
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip {
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba(251, 245, 233, 0.35);
+  background: transparent;
+  color: var(--paper);
+  font: inherit;
+  font-size: 0.92rem;
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--glow); }
+.chip[aria-pressed="true"] {
+  background: var(--glow);
+  border-color: var(--glow);
+  color: var(--night);
+  font-weight: 700;
+}
+
+/* ---------- 圖鑑卡片 ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding-bottom: 3rem;
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  color: var(--ink);
+  transform: translateY(-6px) rotate(-0.6deg);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 3px var(--cat);
+}
+.card-top {
+  position: relative;
+  height: 120px;
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.08) 0 10px, transparent 10px 20px),
+    var(--cat);
+  display: grid;
+  place-items: center;
+}
+.card-emoji {
+  font-size: 3.4rem;
+  width: 92px;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  border-radius: 50%;
+  transform: translateY(40px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.card-no {
+  position: absolute;
+  top: 10px;
+  left: 14px;
+  font-family: var(--serif);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+.card-body { padding: 3rem 1.25rem 1.25rem; text-align: center; flex: 1; }
+.card-body h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.card-en { margin: 0; color: var(--ink-soft); font-size: 0.85rem; letter-spacing: 0.04em; }
+.card-summary { margin: 0.75rem 0 0; font-size: 0.95rem; text-align: left; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; justify-content: center; margin-top: 0.9rem; }
+.tag {
+  font-size: 0.78rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink-soft);
+}
+.tag-cat { background: var(--cat); color: #fff; }
+
+.count { text-align: center; color: #bdb5a6; font-size: 0.9rem; margin: -1rem 0 1.5rem; }
+.empty { grid-column: 1 / -1; text-align: center; color: #bdb5a6; padding: 3rem 0; }
+
+/* ---------- 小吃頁 ---------- */
+.snack-page { padding-bottom: 3rem; }
+.crumb { margin: 0.5rem 0 1.5rem; font-size: 0.92rem; }
+.crumb a { text-decoration: none; }
+
+.sheet {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+#hero {
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.08) 0 12px, transparent 12px 24px),
+    var(--cat);
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 1.5rem 2rem;
+}
+#hero .hero-emoji {
+  font-size: 4.5rem;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 0.75rem;
+  display: grid;
+  place-items: center;
+  background: var(--paper);
+  border-radius: 50%;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.35);
+}
+#hero h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(2rem, 6vw, 3rem); margin: 0; }
+#hero .en { margin: 0; opacity: 0.9; letter-spacing: 0.06em; }
+#hero .tagline { margin: 1rem auto 0; max-width: 28em; font-size: 1.1rem; }
+
+.sheet section { padding: 1.75rem clamp(1.25rem, 5vw, 3rem); }
+.sheet section + section { border-top: 2px dashed var(--paper-2); }
+.sheet h2 {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 1.35rem;
+  margin: 0 0 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sheet h2::before {
+  content: "";
+  width: 10px;
+  height: 1.1em;
+  border-radius: 3px;
+  background: var(--cat);
+}
+
+#info dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+}
+#info dl div {
+  background: var(--paper-2);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+#info dt { font-size: 0.8rem; color: var(--ink-soft); }
+#info dd { margin: 0; font-weight: 700; }
+
+#taste ul { padding-left: 1.2rem; margin: 0; }
+#taste li + li { margin-top: 0.4rem; }
+#taste strong { color: var(--cat); }
+
+#howto ol { counter-reset: step; list-style: none; padding: 0; margin: 0; }
+#howto li { counter-increment: step; position: relative; padding-left: 2.6rem; min-height: 2rem; }
+#howto li + li { margin-top: 0.6rem; }
+#howto li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: var(--cat);
+  color: #fff;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.tip {
+  background: #fff8db;
+  border-left: 6px solid var(--glow);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 0;
+}
+.tip strong { display: block; margin-bottom: 0.25rem; }
+
+#related ul { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; padding: 0; margin: 0; }
+#related a {
+  display: inline-block;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+}
+#related a:hover { background: var(--cat); color: #fff; }
+
+/* ---------- 一般內容頁（about） ---------- */
+.prose { max-width: 760px; margin: 0 auto; padding: 1rem 0 3rem; }
+.prose h1 { font-family: var(--serif); font-weight: 900; font-size: 2.2rem; }
+.prose h2 { font-family: var(--serif); color: var(--glow); margin-top: 2rem; }
+.prose code {
+  background: var(--night-2);
+  padding: 0.1em 0.4em;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+.prose table { border-collapse: collapse; width: 100%; }
+.prose th, .prose td { border-bottom: 1px solid var(--night-2); padding: 0.5rem; text-align: left; }
+
+/* ---------- 頁尾 ---------- */
+.site-footer {
+  border-top: 1px solid var(--night-2);
+  padding: 1.5rem 0 2rem;
+  text-align: center;
+  color: #9d968a;
+  font-size: 0.88rem;
+}
+
+@media (max-width: 560px) {
+  .site-nav { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lights { animation: none; }
+  .card, .card:hover { transition: none; transform: none; }
+}

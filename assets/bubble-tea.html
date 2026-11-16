@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 格式：中文名｜台灣小吃圖鑑 -->
+  <title>珍珠奶茶｜台灣小吃圖鑑</title>
+  <meta name="description" content="奶茶加上 Q 彈粉圓，從台灣紅到全世界的手搖飲。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<!-- data-category 必須與 data/snacks.json 的 category 相同：rice / noodle / fried / soup / sweet / drink -->
+<body data-category="drink">
+  <div class="lights" aria-hidden="true"></div>
+
+  <header class="wrap site-nav">
+    <a class="brand" href="../index.html">台灣小吃<span>圖鑑</span></a>
+    <nav>
+      <ul>
+        <li><a href="../index.html">圖鑑</a></li>
+        <li><a href="../about.html">關於</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap snack-page">
+    <p class="crumb"><a href="../index.html">← 回圖鑑</a></p>
+
+    <article class="sheet">
+      <!-- 1. 頁首：emoji、中文名、英文名、一句話介紹（30 字以內） -->
+      <header id="hero">
+        <div class="hero-emoji" aria-hidden="true">🧋</div>
+        <h1>珍珠奶茶</h1>
+        <p class="en">Bubble Tea</p>
+        <p class="tagline">奶茶加上 Q 彈粉圓，從台灣紅到全世界的手搖飲。</p>
+      </header>
+
+      <!-- 2. 基本資料：固定四格 -->
+      <section id="info">
+        <h2>基本資料</h2>
+        <dl>
+          <div><dt>分類</dt><dd>飲品</dd></div>
+          <div><dt>常見地區</dt><dd>全台，發源地有台中、台南兩種說法</dd></div>
+          <div><dt>參考價格</dt><dd>約 NT$ 50–80</dd></div>
+          <div><dt>適合時段</dt><dd>全天候，下午茶最對味</dd></div>
+        </dl>
+      </section>
+
+      <!-- 3. 起源故事：2～3 段，傳說要標明「相傳」 -->
+      <section id="origin">
+        <h2>起源故事</h2>
+        <p>1980 年代，台灣的泡沫紅茶店開始流行，店家用雪克杯把茶和冰塊搖出綿密泡沫，手搖飲文化從這裡起步。後來有人把原本當甜點吃的粉圓加進奶茶，珍珠奶茶就此誕生。</p>
+        <p>到底是誰發明的，一直有兩種說法：台中春水堂表示是 1987 年由店內員工把粉圓放進奶茶；台南翰林茶館則說老闆在 1986 年從市場上的白色粉圓得到靈感。兩家各有說法，至今沒有公認的定論。</p>
+        <p>之後珍奶一路紅到香港、日本、東南亞和歐美，英文常叫 bubble tea，在美國也常被叫做 boba。</p>
+      </section>
+
+      <!-- 4. 特色與口感：3～5 條，每條以粗體關鍵字開頭 -->
+      <section id="taste">
+        <h2>特色與口感</h2>
+        <ul>
+          <li><strong>粉圓</strong>：用木薯粉做成，煮好後外 Q 內軟，越嚼越香。</li>
+          <li><strong>茶奶平衡</strong>：紅茶的澀香配上奶的滑順，甜而不膩。</li>
+          <li><strong>客製化</strong>：甜度、冰塊可以自己選，從全糖到無糖都有。</li>
+          <li><strong>粗吸管</strong>：專用的粗吸管讓珍珠能一顆顆吸上來，是喝珍奶的樂趣之一。</li>
+        </ul>
+      </section>
+
+      <!-- 5. 推薦吃法：3～4 個步驟或建議 -->
+      <section id="howto">
+        <h2>推薦吃法</h2>
+        <ol>
+          <li>點餐時先選甜度和冰量，第一次喝可以從「半糖少冰」開始。</li>
+          <li>插吸管前先把整杯搖一搖，讓沉在底部的糖和珍珠均勻。</li>
+          <li>邊喝茶邊吸珍珠，一口茶配兩三顆最剛好。</li>
+          <li>買了就盡快喝，珍珠放久會變硬、口感變差。</li>
+        </ol>
+      </section>
+
+      <!-- 6. 小知識：一則 -->
+      <section id="trivia">
+        <h2>小知識</h2>
+        <p class="tip"><strong>你知道嗎？</strong>英文的 boba 來自「波霸」，原本指特別大顆的粉圓，後來在英語圈直接變成珍珠奶茶的代稱。</p>
+      </section>
+
+      <!-- 7. 相關小吃：1～3 個，連到 snacks/ 裡已存在的頁面 -->
+      <section id="related">
+        <h2>相關小吃</h2>
+        <ul>
+          <li><a href="stinky-tofu.html">🧆 臭豆腐</a></li>
+          <li><a href="oyster-omelet.html">🦪 蚵仔煎</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">台灣小吃圖鑑 · 以 CLAUDE.md 規則持續擴充的靜態網站 · <a href="../about.html">關於本站</a></div>
+  </footer>
+</body>
+</html>
